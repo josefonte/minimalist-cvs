@@ -1,19 +1,17 @@
 "use client";
 import * as React from "react";
 import Link from "next/link";
+import { Separator } from "@/components/ui/separator";
 
 import {
-    MoonIcon,
-    SunIcon,
-    ArrowTopRightIcon,
-    GitHubLogoIcon,
-    TwitterLogoIcon,
-    LinkedInLogoIcon,
-    VideoIcon,
-    InstagramLogoIcon,
-    EnvelopeClosedIcon,
+    PersonIcon,
+    BackpackIcon,
+    ArchiveIcon,
+    CameraIcon,
+    FileTextIcon,
+    Pencil1Icon,
 } from "@radix-ui/react-icons";
-
+/*
 import {
     NavigationMenu,
     NavigationMenuItem,
@@ -23,11 +21,13 @@ import {
 } from "@/components/ui/navigation-menu";
 
 import { Button } from "@/components/ui/button";
-
+*/
 export default function ButtonsNav() {
+    const [selected, setSelected] = React.useState("about");
+
     return (
-        <div className="flex flex-row justify-around  ">
-            <NavigationMenu>
+        <div className="flex flex-row justify-around border-b sticky top-0 pb-2">
+            {/*<NavigationMenu>
                 <NavigationMenuList>
                     <NavigationMenuItem>
                         <Link href="/" legacyBehavior passHref>
@@ -84,7 +84,61 @@ export default function ButtonsNav() {
                         </Link>
                     </NavigationMenuItem>
                 </NavigationMenuList>
-            </NavigationMenu>
+            </NavigationMenu>*/}
+
+            <div className="hover:cursor-pointer hover:font-medium">
+                <Link href="/" legacyBehavior passHref>
+                    <div className="flex flex-row justify-between gap-1 items-center ">
+                        <PersonIcon className=" subpixel-antialiased h-3.5 " />
+                        About
+                    </div>
+                </Link>
+            </div>
+
+            <div className="hover:cursor-pointer hover:font-medium">
+                <Link href="/education" legacyBehavior passHref>
+                    <div className="flex flex-row justify-between gap-1 items-center ">
+                        <FileTextIcon className=" subpixel-antialiased h-3.5 " />
+                        Education
+                    </div>
+                </Link>
+            </div>
+
+            <div className="hover:cursor-pointer hover:font-medium">
+                <Link href="/work" legacyBehavior passHref>
+                    <div className="flex flex-row justify-between gap-1 items-center ">
+                        <BackpackIcon className=" subpixel-antialiased h-3.5 " />
+                        Work
+                    </div>
+                </Link>
+            </div>
+
+            <div className="hover:cursor-pointer hover:font-medium">
+                <Link href="/projects" legacyBehavior passHref>
+                    <div className="flex flex-row justify-between gap-1 items-center ">
+                        <ArchiveIcon className=" subpixel-antialiased h-3.5 " />
+                        Projects
+                    </div>
+                </Link>
+            </div>
+
+            <div className="hover:cursor-pointer hover:font-medium">
+                <Link href="/photos" legacyBehavior passHref>
+                    <div className="flex flex-row justify-between gap-1 items-center     ">
+                        <CameraIcon className=" subpixel-antialiased h-3.5 " />
+                        Photos
+                    </div>
+                </Link>
+            </div>
+
+            <div className="hover:cursor-pointer hover:font-medium">
+                <Link href="/blog" legacyBehavior passHref>
+                    <div className="flex flex-row justify-between gap-1 items-center ">
+                        <Pencil1Icon className=" subpixel-antialiased h-3.5 " />
+                        Writing
+                    </div>
+                </Link>
+            </div>
         </div>
     );
 }
