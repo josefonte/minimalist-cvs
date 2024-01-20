@@ -1,4 +1,4 @@
-export interface EducationData {
+export interface EducationDataType {
     institution: string;
     course: string;
     description: string[];
@@ -7,7 +7,7 @@ export interface EducationData {
     location?: string;
 }
 
-const data: EducationData[] = [
+const data: EducationDataType[] = [
     {
         institution: "Universidade do Minho",
         course: "MSc in Software Engineering",
@@ -22,7 +22,7 @@ const data: EducationData[] = [
             "React Native",
             "Docker",
         ],
-        date: "2023 - 2025",
+        date: "2023 - Present",
         location: "Braga, Portugal",
     },
     {
@@ -51,16 +51,7 @@ const data: EducationData[] = [
         description: [
             "Spent one year studying mechanical engineering and decided to change courses to software engineering.",
         ],
-        badges: [
-            "Java",
-            "Python",
-            "MySQL",
-            " C/C++",
-            "C#",
-            "Haskell",
-            "MatLab",
-            "Knime",
-        ],
+        badges: ["Python", "AutoCAD", "Fusion 360"],
         date: "2019 - 2020",
         location: "Braga, Portugal",
     },

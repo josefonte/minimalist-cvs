@@ -26,8 +26,9 @@ export default function ButtonsNav() {
     const [selected, setSelected] = React.useState("about");
 
     return (
-        <div className="flex flex-row justify-around border-b sticky top-0 pb-2">
-            {/*<NavigationMenu>
+        <div className="flex flex-row justify-around border-b  ">
+            {/*
+            <NavigationMenu>
                 <NavigationMenuList>
                     <NavigationMenuItem>
                         <Link href="/" legacyBehavior passHref>
@@ -84,9 +85,9 @@ export default function ButtonsNav() {
                         </Link>
                     </NavigationMenuItem>
                 </NavigationMenuList>
-            </NavigationMenu>*/}
-
-            <div className="hover:cursor-pointer hover:font-medium">
+            </NavigationMenu>
+*/}
+            <div className="hover:cursor-pointer hover:font-medium pb-2 hover:border-b ">
                 <Link href="/" legacyBehavior passHref>
                     <div className="flex flex-row justify-between gap-1 items-center ">
                         <PersonIcon className=" subpixel-antialiased h-3.5 " />
@@ -95,7 +96,7 @@ export default function ButtonsNav() {
                 </Link>
             </div>
 
-            <div className="hover:cursor-pointer hover:font-medium">
+            <div className="hover:cursor-pointer hover:font-medium hover:border-b ">
                 <Link href="/education" legacyBehavior passHref>
                     <div className="flex flex-row justify-between gap-1 items-center ">
                         <FileTextIcon className=" subpixel-antialiased h-3.5 " />
@@ -104,7 +105,7 @@ export default function ButtonsNav() {
                 </Link>
             </div>
 
-            <div className="hover:cursor-pointer hover:font-medium">
+            <div className="hover:cursor-pointer hover:font-medium hover:border-b">
                 <Link href="/work" legacyBehavior passHref>
                     <div className="flex flex-row justify-between gap-1 items-center ">
                         <BackpackIcon className=" subpixel-antialiased h-3.5 " />
@@ -113,7 +114,7 @@ export default function ButtonsNav() {
                 </Link>
             </div>
 
-            <div className="hover:cursor-pointer hover:font-medium">
+            <div className="hover:cursor-pointer hover:font-medium hover:border-b">
                 <Link href="/projects" legacyBehavior passHref>
                     <div className="flex flex-row justify-between gap-1 items-center ">
                         <ArchiveIcon className=" subpixel-antialiased h-3.5 " />
@@ -122,7 +123,7 @@ export default function ButtonsNav() {
                 </Link>
             </div>
 
-            <div className="hover:cursor-pointer hover:font-medium">
+            <div className="hover:cursor-pointer hover:font-medium hover:border-b">
                 <Link href="/photos" legacyBehavior passHref>
                     <div className="flex flex-row justify-between gap-1 items-center     ">
                         <CameraIcon className=" subpixel-antialiased h-3.5 " />
@@ -131,7 +132,7 @@ export default function ButtonsNav() {
                 </Link>
             </div>
 
-            <div className="hover:cursor-pointer hover:font-medium">
+            <div className="hover:cursor-pointer hover:font-medium hover:border-b">
                 <Link href="/blog" legacyBehavior passHref>
                     <div className="flex flex-row justify-between gap-1 items-center ">
                         <Pencil1Icon className=" subpixel-antialiased h-3.5 " />

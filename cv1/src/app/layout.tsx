@@ -47,7 +47,13 @@ export default function RootLayout({
 
                     <div className="text-sm text-center my-5 inset-x-0 bottom-0 ">
                         Made with <HeartFilledIcon className="inline-block" />{" "}
-                        by José Fonte
+                        by{" "}
+                        <a
+                            href="https://github.com/josefonte/minimalist-cvs/tree/main/cv1"
+                            className="inline-block hover:underline"
+                        >
+                            José Fonte
+                        </a>
                     </div>
                 </ThemeProvider>
             </body>
