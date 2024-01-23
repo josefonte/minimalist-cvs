@@ -19,14 +19,25 @@ export default function ProfileInfo() {
                 <h1 className="text-3xl font-bold border-solid text-center">
                     José Fonte
                 </h1>
-                <div className="flex flex-row justify-center  gap-2  text-center">
-                    <p className=""> MSc in Software Engineering Student</p>
-                    <a
-                        className="italic hover:text-red-800"
-                        href="https://www.uminho.pt/PT"
-                    >
-                        @ Universidade do Minho
-                    </a>
+                <div className="flex flex-col  justify-center  gap-2  text-center flex-wrap items-center">
+                    <p> MSc in Software Engineering Student</p>
+                    <div className="flex flex-row gap-2 items-center">
+                        <div className="flex flex-row gap-1 items-center">
+                            <p className=" italic ">@</p>
+                            <a
+                                className="italic hover:underline horver:cursor-pointer "
+                                href="https://www.uminho.pt/PT"
+                                target="_blank"
+                            >
+                                Universidade do Minho
+                            </a>
+                        </div>
+                        <img
+                            src="/assets/uminho.png"
+                            className="inline-block h-4 w-4 rounded"
+                            alt="Universidade do Minho Logo"
+                        />{" "}
+                    </div>
                 </div>
                 <div className="flex flex-row justify-center  gap-1 items-center text-center">
                     <SewingPinFilledIcon /> Portugal

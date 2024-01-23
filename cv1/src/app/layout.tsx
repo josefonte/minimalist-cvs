@@ -34,15 +34,17 @@ export default function RootLayout({
                             <div className=" flex justify-end ">
                                 <ButtonsNav />
                             </div>
-                            <div className="mx-[25%] mb-10 ">
+                            <div className="lg:mx-[25%] mb-10 ">
                                 <ProfileInfo />
                             </div>
-                            <div className=" sticky top-0 mx-64 mt-3 ">
+                            <div className="mx-[10%] md:mx-[15%] lg:mx-[20%] sticky top-0  mt-3 ">
                                 <Navbar />
                             </div>
                         </div>
 
-                        <div className="mx-64 mt-3 ">{children}</div>
+                        <div className="mx-[10%] md:mx-[15%] lg:mx-[20%] mt-3 ">
+                            {children}
+                        </div>
                     </div>
 
                     <div className="text-sm text-center my-5 inset-x-0 bottom-0 ">

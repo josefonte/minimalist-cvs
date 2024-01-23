@@ -28,11 +28,11 @@ const data: WorkDataType[] = [
     },
     {
         company: "Sngular Portugal",
-        role: "Software Enginner - Summer Intern ",
+        role: "Full-Stack Software Enginner | Summer Intern ",
         description: [
-            "Collaborated with a team of summer interns to develop a Jira App integrated in the Atlassian Ecosystem.",
-            " The goal of the app was to manage tasks and sub‑tasks inside tickets, with a backbone for admins to manage everything.",
-            "At the end of the Summer Internship, my team was able to achieve all goals a week in advance.",
+            "Collaborated in a team of four summer interns to develop a JIRA App integrated in the Atlassian Ecosystem.",
+            " The goal of the app was to manage tasks and subtasks inside JIRA tickets, with a backbone for admins to manage everything.",
+            "At the end of the Summer Internship, my team was able to develop, implement and test every feature.",
         ],
         badges: [
             "MongoDB",
@@ -40,7 +40,7 @@ const data: WorkDataType[] = [
             "NodeJS",
             "React",
             "Atlassian Design System",
-            "Jira",
+            "JIRA",
             "Confluence",
             "Git/Gitlab",
         ],
@@ -49,7 +49,7 @@ const data: WorkDataType[] = [
     },
     {
         company: "CodeVision",
-        role: "Software Enginner - Summer Intern ",
+        role: "Full-Stack Software Enginner | Summer Intern ",
         description: [
             "Collaborated with a team to develop an internal tool that would connect international partners with the company.",
             "Worked with Entity ORM to manage multiple databases.",
@@ -62,6 +62,7 @@ const data: WorkDataType[] = [
             "Azure",
             "Git",
             "Entity ORM",
+            "Agile",
         ],
         date: "Jun - Sept 2022 ",
         location: "Braga, Portugal",
