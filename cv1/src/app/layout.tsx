@@ -4,14 +4,16 @@ import "./globals.css";
 
 import { ThemeProvider } from "@/components/theme-provider";
 import ButtonsNav from "@/components/me/buttons-nav";
+
 import Navbar from "@/components/me/navbar";
+
 import ProfileInfo from "@/components/me/nav-ProfileInfo";
 import { HeartFilledIcon } from "@radix-ui/react-icons";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-    title: "CV1",
+    title: "josefonte",
     description: "Create a CV with Next.js and Tailwind CSS",
 };
 
