@@ -66,12 +66,12 @@ export default function Navbar() {
     }, [activeTabIndex]);
 
     return (
-        <div className="flew-row relative mx-auto flex h-12 rounded-3xl border border-black/40 bg-neutral-800 px-2 backdrop-blur-sm justify-between">
+        <div className="flew-row relative mx-auto flex h-12 rounded-lg border border-black/40 bg-neutral-800 px-2 backdrop-blur-sm justify-between">
             <span
-                className="absolute bottom-0 top-0 -z-10 flex overflow-hidden rounded-3xl py-2 transition-all duration-300"
+                className="absolute bottom-0  -z-10 flex overflow-hidden rounded-md py-2 transition-all duration-300"
                 style={{ left: tabUnderlineLeft, width: tabUnderlineWidth }}
             >
-                <span className="h-full w-full rounded-3xl bg-gray-200/30" />
+                <span className="h-1 w-full rounded-md  bg-gray-200/30" />
             </span>
             {allTabs.map((tab, index) => {
                 const isActive = activeTabIndex === index;
