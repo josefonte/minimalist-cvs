@@ -1,8 +1,6 @@
 "use client";
-import * as React from "react";
+import { useRef, useState, useEffect } from "react";
 import Link from "next/link";
-import { Separator } from "@/components/ui/separator";
-
 import {
     PersonIcon,
     BackpackIcon,
@@ -11,82 +9,103 @@ import {
     FileTextIcon,
     Pencil1Icon,
 } from "@radix-ui/react-icons";
-/*
-import {
-    NavigationMenu,
-    NavigationMenuItem,
-    NavigationMenuLink,
-    NavigationMenuList,
-    navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu";
 
-import { Button } from "@/components/ui/button";
-*/
+let allTabs = [
+    {
+        id: "about",
+        name: "About",
+        icon: <PersonIcon className=" subpixel-antialiased h-3.5 " />,
+    },
+
+    {
+        id: "education",
+        name: "Education",
+        icon: <FileTextIcon className=" subpixel-antialiased h-3.5 " />,
+    },
+    {
+        id: "work",
+        name: "Work",
+        icon: <BackpackIcon className=" subpixel-antialiased h-3.5 " />,
+    },
+
+    {
+        id: "projects",
+        name: "Projects",
+        icon: <ArchiveIcon className=" subpixel-antialiased h-3.5 " />,
+    },
+    {
+        id: "photos",
+        name: "Photos",
+        icon: <CameraIcon className=" subpixel-antialiased h-3.5 " />,
+    },
+    {
+        id: "blog",
+        name: "Blog",
+        icon: <Pencil1Icon className=" subpixel-antialiased h-3.5 " />,
+    },
+];
+
+export default function Navbar() {
+    const tabsRef = useRef<(HTMLElement | null)[]>([]);
+    const [activeTabIndex, setActiveTabIndex] = useState<number | null>(0);
+    const [tabUnderlineWidth, setTabUnderlineWidth] = useState(0);
+    const [tabUnderlineLeft, setTabUnderlineLeft] = useState(0);
+
+    useEffect(() => {
+        if (activeTabIndex === null) {
+            return;
+        }
+
+        const setTabPosition = () => {
+            const currentTab = tabsRef.current[activeTabIndex] as HTMLElement;
+            setTabUnderlineLeft(currentTab?.offsetLeft ?? 0);
+            setTabUnderlineWidth(currentTab?.clientWidth ?? 0);
+        };
+
+        setTabPosition();
+    }, [activeTabIndex]);
+
+    return (
+        <div className="flew-row relative mx-auto flex h-12 rounded-3xl border border-black/40 bg-neutral-800 px-2 backdrop-blur-sm justify-between">
+            <span
+                className="absolute bottom-0 top-0 -z-10 flex overflow-hidden rounded-3xl py-2 transition-all duration-300"
+                style={{ left: tabUnderlineLeft, width: tabUnderlineWidth }}
+            >
+                <span className="h-full w-full rounded-3xl bg-gray-200/30" />
+            </span>
+            {allTabs.map((tab, index) => {
+                const isActive = activeTabIndex === index;
+
+                return (
+                    <Link
+                        key={index}
+                        href={tab.id === "about" ? "/" : "/" + tab.id}
+                        legacyBehavior
+                        passHref
+                    >
+                        <button
+                            ref={(el) => (tabsRef.current[index] = el)}
+                            className={`${
+                                isActive ? `` : `hover:text-neutral-300`
+                            }  flex flex-row justify-between gap-1 items-center  my-auto cursor-pointer select-none rounded-full px-4 text-center font-light text-white`}
+                            onClick={() => setActiveTabIndex(index)}
+                        >
+                            {tab.icon}
+                            {tab.name}
+                        </button>
+                    </Link>
+                );
+            })}
+        </div>
+    );
+}
+
+/*
 export default function ButtonsNav() {
     const [selected, setSelected] = React.useState("about");
 
     return (
         <div className="flex flex-row justify-around border-b  ">
-            {/*
-            <NavigationMenu>
-                <NavigationMenuList>
-                    <NavigationMenuItem>
-                        <Link href="/" legacyBehavior passHref>
-                            <NavigationMenuLink
-                                className={navigationMenuTriggerStyle()}
-                            >
-                                About
-                            </NavigationMenuLink>
-                        </Link>
-                    </NavigationMenuItem>
-                    <NavigationMenuItem>
-                        <Link href="/education" legacyBehavior passHref>
-                            <NavigationMenuLink
-                                className={navigationMenuTriggerStyle()}
-                            >
-                                Education
-                            </NavigationMenuLink>
-                        </Link>
-                    </NavigationMenuItem>
-                    <NavigationMenuItem>
-                        <Link href="/work" legacyBehavior passHref>
-                            <NavigationMenuLink
-                                className={navigationMenuTriggerStyle()}
-                            >
-                                Work
-                            </NavigationMenuLink>
-                        </Link>
-                    </NavigationMenuItem>
-                    <NavigationMenuItem>
-                        <Link href="/projects" legacyBehavior passHref>
-                            <NavigationMenuLink
-                                className={navigationMenuTriggerStyle()}
-                            >
-                                Projects
-                            </NavigationMenuLink>
-                        </Link>
-                    </NavigationMenuItem>
-                    <NavigationMenuItem>
-                        <Link href="/photos" legacyBehavior passHref>
-                            <NavigationMenuLink
-                                className={navigationMenuTriggerStyle()}
-                            >
-                                Photos
-                            </NavigationMenuLink>
-                        </Link>
-                    </NavigationMenuItem>
-                    <NavigationMenuItem>
-                        <Link href="/blog" legacyBehavior passHref>
-                            <NavigationMenuLink
-                                className={navigationMenuTriggerStyle()}
-                            >
-                                Blog
-                            </NavigationMenuLink>
-                        </Link>
-                    </NavigationMenuItem>
-                </NavigationMenuList>
-            </NavigationMenu>
-*/}
             <div className="hover:cursor-pointer hover:font-medium pb-2 hover:border-b ">
                 <Link href="/" legacyBehavior passHref>
                     <div className="flex flex-row justify-between gap-1 items-center ">
@@ -143,3 +162,4 @@ export default function ButtonsNav() {
         </div>
     );
 }
+*/
