@@ -63,12 +63,12 @@ export default function ProjectsCard({
 
                         {repo_link && icon === "github" ? (
                             <Link href={link_repo} target="_blank" passHref>
-                                <GitHubLogoIcon className="h-5 w-5" />
+                                <GitHubLogoIcon className="h-5 w-5 hover:scale-110 " />
                             </Link>
                         ) : null}
                         {repo_link && icon === "gitlab" ? (
                             <Link href={link_repo} target="_blank" passHref>
-                                <GitlabIcon className="h-5 w-5" />
+                                <GitlabIcon className="h-5 w-5 hover:scale-110" />
                             </Link>
                         ) : null}
                     </div>
