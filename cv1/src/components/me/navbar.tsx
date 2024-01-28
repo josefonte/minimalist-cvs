@@ -1,17 +1,8 @@
 "use client";
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, use } from "react";
 import { usePathname } from "next/navigation";
 
 import Link from "next/link";
-
-import {
-    PersonIcon,
-    BackpackIcon,
-    ArchiveIcon,
-    CameraIcon,
-    FileTextIcon,
-    Pencil1Icon,
-} from "@radix-ui/react-icons";
 
 import {
     PencilLine,
@@ -22,7 +13,7 @@ import {
     Camera,
 } from "lucide-react";
 
-let allTabs = [
+const allTabs = [
     {
         id: "about",
         name: "About",
@@ -132,6 +123,7 @@ function Navbar() {
     const [activeTabIndex, setActiveTabIndex] = useState<number | null>(
         getTabIndex()
     );
+
     const [tabUnderlineWidth, setTabUnderlineWidth] = useState(0);
     const [tabUnderlineLeft, setTabUnderlineLeft] = useState(0);
 

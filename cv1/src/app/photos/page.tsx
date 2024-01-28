@@ -131,7 +131,7 @@ export default function Photos() {
                     </div>
 
                     <div className="flex flex-col gap-1">
-                        <p>London 2023</p>
+                        <p className="pl-3 text-lg">London 2023</p>
                         <div className="w-[650px] h-fit grid auto-rows-[200px] grid-cols-3 gap-4 overflow-hidden shrink-0">
                             <div
                                 key={1}
