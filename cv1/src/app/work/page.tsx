@@ -12,16 +12,18 @@ function CustomFields(props: { index: number }) {
         <>
             {coursesData[index] !== "" ? (
                 <div>
-                    <p className="inline-block font-medium mr-1">
+                    <div className="inline-block font-medium mr-1">
                         Relevant Courses :
-                    </p>
+                    </div>
                     {coursesData[index]}
                 </div>
             ) : null}
 
             {skills[index] !== "" ? (
                 <div>
-                    <p className="inline-block font-medium mr-1">Skills :</p>
+                    <div className="inline-block font-medium mr-1">
+                        Skills :
+                    </div>
                     {skills[index]}
                 </div>
             ) : null}

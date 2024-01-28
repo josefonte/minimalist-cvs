@@ -58,7 +58,7 @@ export default function ProjectsCard({
                                 <ArrowTopRightIcon className="inline-block ml-1 h-5 w-5" />
                             </a>
                         ) : (
-                            <p className="">{title}</p>
+                            <div className="">{title}</div>
                         )}
 
                         {repo_link && icon === "github" ? (

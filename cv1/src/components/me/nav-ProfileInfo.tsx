@@ -16,14 +16,14 @@ export default function ProfileInfo() {
             </div>
 
             <div className="flex flex-col gap-2 mt-2">
-                <h1 className="text-3xl font-bold border-solid text-center">
+                <div className="text-3xl font-bold border-solid text-center">
                     José Fonte
-                </h1>
+                </div>
                 <div className="flex flex-col  justify-center  gap-2  text-center flex-wrap items-center">
-                    <p> MSc in Software Engineering Student</p>
+                    <div> MSc in Software Engineering Student</div>
                     <div className="flex flex-row gap-2 items-center">
                         <div className="flex flex-row gap-1 items-center">
-                            <p className=" italic ">@</p>
+                            <div className=" italic ">@</div>
                             <a
                                 className="italic hover:underline horver:cursor-pointer "
                                 href="https://www.uminho.pt/PT"

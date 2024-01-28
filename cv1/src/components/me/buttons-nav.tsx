@@ -54,61 +54,70 @@ export default function ButtonsNav() {
         setTheme(theme === "dark" ? "light" : "dark");
     };
 
-    const refInstagram: React.RefObject<HTMLDivElement> = React.useRef(null);
-
     return (
         <div className="flex flex-row gap-3 pr-4 pt-4">
             <DropdownMenu>
-                <DropdownMenuTrigger>
+                <DropdownMenuTrigger asChild>
                     <Button variant="link">Contacts</Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent>
                     <DropdownMenuGroup>
-                        <DropdownMenuItem
-                            ref={refInstagram}
-                            className="flex flex-row justify-between hover:cursor-pointer"
-                        >
+                        <DropdownMenuItem className="group flex flex-row justify-between hover:cursor-pointer">
                             <div className="flex flex-row gap-3 items-center ">
                                 <InstagramLogoIcon />
                                 <a>Instagram</a>
                             </div>
-                            <ArrowTopRightIcon />
+                            <div className=" transition duration-300 group-hover:rotate-45 group-hover:cursor-pointer">
+                                <ArrowTopRightIcon />
+                            </div>
                         </DropdownMenuItem>
-                        <DropdownMenuItem className="flex flex-row gap-2 min-w-40 justify-between">
+                        <DropdownMenuItem className="group flex flex-row gap-2 min-w-40 justify-between hover:cursor-pointer">
                             <div className="flex flex-row gap-3 items-center ">
                                 <VideoIcon /> Youtube
                             </div>
-                            <ArrowTopRightIcon />
+                            <div className=" transition duration-300 group-hover:rotate-45 group-hover:cursor-pointer">
+                                <ArrowTopRightIcon />
+                            </div>
                         </DropdownMenuItem>
-                        <DropdownMenuItem className="flex flex-row gap-2  justify-between">
+                        <DropdownMenuItem className="group flex flex-row gap-2  justify-between hover:cursor-pointer">
                             <div className="flex flex-row gap-3 items-center ">
                                 <LinkedInLogoIcon /> LinkedIn
                             </div>
-                            <ArrowTopRightIcon />
+                            <div className=" transition duration-300 group-hover:rotate-45 group-hover:cursor-pointer">
+                                <ArrowTopRightIcon />
+                            </div>
                         </DropdownMenuItem>
-                        <DropdownMenuItem className="flex flex-row gap-2  justify-between">
+                        <DropdownMenuItem className="group flex flex-row gap-2  justify-between hover:cursor-pointer">
                             <div className="flex flex-row gap-3 items-center ">
                                 <TwitterLogoIcon /> Twitter
                             </div>
-                            <ArrowTopRightIcon />
+                            <div className=" transition duration-300 group-hover:rotate-45 group-hover:cursor-pointer">
+                                <ArrowTopRightIcon />
+                            </div>
                         </DropdownMenuItem>
-                        <DropdownMenuItem className="flex flex-row gap-2  justify-between">
+                        <DropdownMenuItem className="group flex flex-row gap-2  justify-between hover:cursor-pointer">
                             <div className="flex flex-row gap-3 items-center ">
                                 <GitHubLogoIcon /> Github
                             </div>
-                            <ArrowTopRightIcon />
+                            <div className=" transition duration-300 group-hover:rotate-45 group-hover:cursor-pointer">
+                                <ArrowTopRightIcon />
+                            </div>
                         </DropdownMenuItem>
-                        <DropdownMenuItem className="flex flex-row gap-2 min-w-40 justify-between">
+                        <DropdownMenuItem className="group flex flex-row gap-2 min-w-40 justify-between hover:cursor-pointer">
                             <div className="flex flex-row gap-3 items-center ">
                                 <Gitlab className="w-4" /> GitLab
                             </div>
-                            <ArrowTopRightIcon />
+                            <div className=" transition duration-300 group-hover:rotate-45 group-hover:cursor-pointer">
+                                <ArrowTopRightIcon />
+                            </div>
                         </DropdownMenuItem>
-                        <DropdownMenuItem className="flex flex-row gap-2 min-w-40 justify-between">
+                        <DropdownMenuItem className="group flex flex-row gap-2 min-w-40 justify-between hover:cursor-pointer">
                             <div className="flex flex-row gap-3 items-center ">
                                 <AtSignIcon className="w-4" /> Medium
                             </div>
-                            <ArrowTopRightIcon />
+                            <div className=" transition duration-300 group-hover:rotate-45 group-hover:cursor-pointer">
+                                <ArrowTopRightIcon />
+                            </div>
                         </DropdownMenuItem>
                     </DropdownMenuGroup>
                     <DropdownMenuSeparator />
@@ -128,6 +137,7 @@ export default function ButtonsNav() {
                 <MoonIcon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
                 <span className="sr-only">Toggle theme</span>
             </Button>
+
             <Dialog onOpenChange={onClose} open={isOpen} defaultOpen={isOpen}>
                 <DialogContent className="md:max-w-[725px] px-10 pt-8 ">
                     <DialogHeader>
@@ -202,7 +212,7 @@ export default function ButtonsNav() {
 
                         <Button
                             type="submit"
-                            className="group relative inline-flex h-10 items-center justify-center overflow-hidden rounded-md  hover:cursor-pointer px-6 font-medium  duration-500"
+                            className="group relative inline-flex h-10 items-center justify-center overflow-hidden rounded-md  hover:cursor-pointer px-6 font-medium  duration-500 hover:bg-primary"
                         >
                             <span className="translate-x-0 opacity-100 transition group-hover:-translate-x-[150%] group-hover:opacity-0">
                                 Send Email

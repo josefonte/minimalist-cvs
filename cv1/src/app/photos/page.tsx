@@ -22,7 +22,7 @@ export default function Photos() {
                                 />
                             </div>
                             <div
-                                key={1}
+                                key={2}
                                 className="row-span-1 col-span-2 rounded-xl border-2 border-slate-400/10 bg-neutral-100  dark:bg-neutral-900 "
                             >
                                 <img
@@ -37,7 +37,7 @@ export default function Photos() {
                         <p className="pl-3 text-lg">Summer 2023</p>
                         <div className="w-[900px] h-fit grid auto-rows-[200px] grid-cols-4 gap-4 overflow-hidden shrink-0 mr-8">
                             <div
-                                key={1}
+                                key={3}
                                 className="row-span-1 rounded-xl border-2 border-slate-400/10 bg-neutral-100  dark:bg-neutral-900 "
                             >
                                 <img
@@ -47,7 +47,7 @@ export default function Photos() {
                                 />
                             </div>
                             <div
-                                key={2}
+                                key={4}
                                 className="row-span-1 rounded-xl border-2 border-slate-400/10 bg-neutral-100  dark:bg-neutral-900 "
                             >
                                 <img
@@ -58,7 +58,7 @@ export default function Photos() {
                             </div>
 
                             <div
-                                key={1}
+                                key={5}
                                 className="row-span-2 rounded-xl border-2 border-slate-400/10 bg-neutral-100  dark:bg-neutral-900 "
                             >
                                 <img
@@ -68,7 +68,7 @@ export default function Photos() {
                                 />
                             </div>
                             <div
-                                key={1}
+                                key={6}
                                 className="row-span-1  rounded-xl border-2 border-slate-400/10 bg-neutral-100  dark:bg-neutral-900 "
                             >
                                 <img
@@ -78,7 +78,7 @@ export default function Photos() {
                                 />
                             </div>
                             <div
-                                key={1}
+                                key={7}
                                 className="row-span-1 col-span-2 rounded-xl border-2 border-slate-400/10 bg-neutral-100  dark:bg-neutral-900 "
                             >
                                 <img
@@ -88,7 +88,7 @@ export default function Photos() {
                                 />
                             </div>
                             <div
-                                key={1}
+                                key={8}
                                 className="row-span-1 rounded-xl border-2 border-slate-400/10 bg-neutral-100  dark:bg-neutral-900 "
                             >
                                 <img
@@ -98,7 +98,7 @@ export default function Photos() {
                                 />
                             </div>
                             <div
-                                key={1}
+                                key={9}
                                 className="row-span-1 rounded-xl border-2 border-slate-400/10 bg-neutral-100  dark:bg-neutral-900 "
                             >
                                 <img
@@ -108,7 +108,7 @@ export default function Photos() {
                                 />
                             </div>
                             <div
-                                key={1}
+                                key={10}
                                 className="row-span-1 rounded-xl border-2 border-slate-400/10 bg-neutral-100  dark:bg-neutral-900 "
                             >
                                 <img
@@ -118,7 +118,7 @@ export default function Photos() {
                                 />
                             </div>
                             <div
-                                key={1}
+                                key={11}
                                 className="row-span-1 col-span-2 rounded-xl border-2 border-slate-400/10 bg-neutral-100  dark:bg-neutral-900 "
                             >
                                 <img
@@ -134,7 +134,7 @@ export default function Photos() {
                         <p className="pl-3 text-lg">London 2023</p>
                         <div className="w-[650px] h-fit grid auto-rows-[200px] grid-cols-3 gap-4 overflow-hidden shrink-0">
                             <div
-                                key={1}
+                                key={12}
                                 className="row-span-1 rounded-xl border-2 border-slate-400/10 bg-neutral-100  dark:bg-neutral-900 "
                             >
                                 <img
@@ -144,7 +144,7 @@ export default function Photos() {
                                 />
                             </div>
                             <div
-                                key={2}
+                                key={13}
                                 className="row-span-1 rounded-xl border-2 border-slate-400/10 bg-neutral-100  dark:bg-neutral-900 "
                             >
                                 <img
@@ -154,7 +154,7 @@ export default function Photos() {
                                 />
                             </div>
                             <div
-                                key={1}
+                                key={14}
                                 className="row-span-2 rounded-xl border-2 border-slate-400/10 bg-neutral-100  dark:bg-neutral-900 "
                             >
                                 <img
@@ -165,7 +165,7 @@ export default function Photos() {
                             </div>
 
                             <div
-                                key={1}
+                                key={15}
                                 className="row-span-1  rounded-xl border-2 border-slate-400/10 bg-neutral-100  dark:bg-neutral-900 "
                             >
                                 <img
@@ -175,7 +175,7 @@ export default function Photos() {
                                 />
                             </div>
                             <div
-                                key={1}
+                                key={16}
                                 className="row-span-1 rounded-xl border-2 border-slate-400/10 bg-neutral-100  dark:bg-neutral-900 "
                             >
                                 <img
@@ -185,7 +185,7 @@ export default function Photos() {
                                 />
                             </div>
                             <div
-                                key={1}
+                                key={17}
                                 className="row-span-1 rounded-xl border-2 border-slate-400/10 bg-neutral-100  dark:bg-neutral-900 "
                             >
                                 <img
@@ -195,7 +195,7 @@ export default function Photos() {
                                 />
                             </div>
                             <div
-                                key={1}
+                                key={18}
                                 className="row-span-1 rounded-xl border-2 border-slate-400/10 bg-neutral-100  dark:bg-neutral-900 "
                             >
                                 <img
@@ -205,7 +205,7 @@ export default function Photos() {
                                 />
                             </div>
                             <div
-                                key={1}
+                                key={19}
                                 className="row-span-1 rounded-xl border-2 border-slate-400/10 bg-neutral-100  dark:bg-neutral-900 "
                             >
                                 <img

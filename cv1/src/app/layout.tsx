@@ -3,11 +3,11 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 
 import { ThemeProvider } from "@/components/theme-provider";
+
 import ButtonsNav from "@/components/me/buttons-nav";
-
 import Navbar from "@/components/me/navbar";
-
 import ProfileInfo from "@/components/me/nav-ProfileInfo";
+
 import { HeartFilledIcon } from "@radix-ui/react-icons";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -25,6 +25,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={inter.className}>
+                {" "}
                 <ThemeProvider
                     attribute="class"
                     defaultTheme="light"
@@ -48,12 +49,12 @@ export default function RootLayout({
                             {children}
                         </div>
                     </div>
-
                     <div className="text-sm text-center my-5 inset-x-0 bottom-0 ">
                         Made with <HeartFilledIcon className="inline-block" />{" "}
                         by{" "}
                         <a
-                            href="https://github.com/josefonte/minimalist-cvs/tree/main/cv1"
+                            href="https://github.com/josefonte/minimalist-cvs/"
+                            target="_blank"
                             className="inline-block hover:underline"
                         >
                             José Fonte
