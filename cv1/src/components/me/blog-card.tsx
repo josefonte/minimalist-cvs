@@ -69,10 +69,6 @@ export default function BlogCard({
                     </div>
                     <Separator orientation="vertical" className="" />
                     <div className="text-sm font-normal	text-muted-foreground">
-                        Likes
-                    </div>
-                    <Separator orientation="vertical" className="" />
-                    <div className="text-sm font-normal	text-muted-foreground">
                         Views
                     </div>
                 </div>

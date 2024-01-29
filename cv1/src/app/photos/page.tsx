@@ -9,7 +9,7 @@ export default function Photos() {
             <ScrollArea className="w-full whitespace-nowrap rounded-md  snap-x snap-mandatory">
                 <div className="flex w-max space-x-4 py-4  ">
                     <div className="flex flex-col gap-1">
-                        <p className="pl-3 text-lg">BJJ 2023</p>
+                        <p className="pl-3 text-lg">BJJ 2023 🥋</p>
                         <div className="w-[440px] h-fit grid auto-rows-[200px] grid-cols-1 gap-4 overflow-hidden shrink-0 mr-8">
                             <div
                                 key={1}
@@ -34,7 +34,7 @@ export default function Photos() {
                         </div>
                     </div>
                     <div className="flex flex-col gap-1">
-                        <p className="pl-3 text-lg">Summer 2023</p>
+                        <p className="pl-3 text-lg">Summer 2023 🌞</p>
                         <div className="w-[900px] h-fit grid auto-rows-[200px] grid-cols-4 gap-4 overflow-hidden shrink-0 mr-8">
                             <div
                                 key={3}
@@ -131,7 +131,7 @@ export default function Photos() {
                     </div>
 
                     <div className="flex flex-col gap-1">
-                        <p className="pl-3 text-lg">London 2023</p>
+                        <p className="pl-3 text-lg">London 2023 🇬🇧</p>
                         <div className="w-[650px] h-fit grid auto-rows-[200px] grid-cols-3 gap-4 overflow-hidden shrink-0">
                             <div
                                 key={12}
