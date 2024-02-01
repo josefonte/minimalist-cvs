@@ -22,7 +22,7 @@ export default function Photos() {
                                     width={1000}
                                     height={1000}
                                     priority={true}
-                                    className="h-full w-full object-cover rounded-xl"
+                                    className="h-full w-full object-cover rounded-[10px]"
                                 />
                             </div>
                             <div
@@ -35,7 +35,7 @@ export default function Photos() {
                                     width={1000}
                                     height={1000}
                                     priority={true}
-                                    className="h-full w-full object-cover rounded-xl"
+                                    className="h-full w-full object-cover rounded-[10px]"
                                 />
                             </div>
                         </div>
@@ -54,7 +54,7 @@ export default function Photos() {
                                     width={1000}
                                     height={1000}
                                     priority={true}
-                                    className="h-full w-full object-cover rounded-xl"
+                                    className="h-full w-full object-cover rounded-[10px]"
                                 />
                             </div>
                             <div
@@ -67,7 +67,7 @@ export default function Photos() {
                                     width={1000}
                                     height={1000}
                                     priority={true}
-                                    className="h-full w-full object-cover rounded-xl"
+                                    className="h-full w-full object-cover rounded-[10px]"
                                 />
                             </div>
 
@@ -81,7 +81,7 @@ export default function Photos() {
                                     width={1000}
                                     height={1000}
                                     priority={true}
-                                    className="h-full w-full object-cover rounded-xl"
+                                    className="h-full w-full object-cover rounded-[10px]"
                                 />
                             </div>
                             <div
@@ -94,7 +94,7 @@ export default function Photos() {
                                     width={1000}
                                     height={1000}
                                     priority={true}
-                                    className="h-full w-full object-cover rounded-xl"
+                                    className="h-full w-full object-cover rounded-[10px]"
                                 />
                             </div>
                             <div
@@ -107,7 +107,7 @@ export default function Photos() {
                                     width={1000}
                                     height={1000}
                                     priority={true}
-                                    className="h-full w-full object-cover rounded-xl"
+                                    className="h-full w-full object-cover rounded-[10px]"
                                 />
                             </div>
                             <div
@@ -120,7 +120,7 @@ export default function Photos() {
                                     width={1000}
                                     height={1000}
                                     priority={true}
-                                    className="h-full w-full object-cover rounded-xl"
+                                    className="h-full w-full object-cover rounded-[10px]"
                                 />
                             </div>
                             <div
@@ -133,7 +133,7 @@ export default function Photos() {
                                     width={1000}
                                     height={1000}
                                     priority={true}
-                                    className="h-full w-full object-cover rounded-xl"
+                                    className="h-full w-full object-cover rounded-[10px]"
                                 />
                             </div>
                             <div
@@ -146,7 +146,7 @@ export default function Photos() {
                                     width={1000}
                                     height={1000}
                                     priority={true}
-                                    className="h-full w-full object-cover rounded-xl"
+                                    className="h-full w-full object-cover rounded-[10px]"
                                 />
                             </div>
                             <div
@@ -159,7 +159,7 @@ export default function Photos() {
                                     width={1000}
                                     height={1000}
                                     priority={true}
-                                    className="h-full w-full object-cover rounded-xl"
+                                    className="h-full w-full object-cover rounded-[10px]"
                                 />
                             </div>
                         </div>
@@ -178,7 +178,7 @@ export default function Photos() {
                                     width={1000}
                                     height={1000}
                                     priority={true}
-                                    className="h-full w-full object-cover rounded-xl"
+                                    className="h-full w-full object-cover rounded-[10px]"
                                 />
                             </div>
                             <div
@@ -191,7 +191,7 @@ export default function Photos() {
                                     width={1000}
                                     height={1000}
                                     priority={true}
-                                    className="h-full w-full object-cover rounded-xl"
+                                    className="h-full w-full object-cover rounded-[10px]"
                                 />
                             </div>
                             <div
@@ -204,7 +204,7 @@ export default function Photos() {
                                     width={1000}
                                     height={1000}
                                     priority={true}
-                                    className="h-full w-full object-cover rounded-xl"
+                                    className="h-full w-full object-cover rounded-[10px]"
                                 />
                             </div>
 
@@ -218,7 +218,7 @@ export default function Photos() {
                                     width={1000}
                                     height={1000}
                                     priority={true}
-                                    className="h-full w-full object-cover rounded-xl"
+                                    className="h-full w-full object-cover rounded-[10px]"
                                 />
                             </div>
                             <div
@@ -231,7 +231,7 @@ export default function Photos() {
                                     width={1000}
                                     height={1000}
                                     priority={true}
-                                    className="h-full w-full object-cover rounded-xl"
+                                    className="h-full w-full object-cover rounded-[10px]"
                                 />
                             </div>
                             <div
@@ -244,7 +244,7 @@ export default function Photos() {
                                     width={1000}
                                     height={1000}
                                     priority={true}
-                                    className="h-full w-full object-cover rounded-xl"
+                                    className="h-full w-full object-cover rounded-[10px]"
                                 />
                             </div>
                             <div
@@ -257,7 +257,7 @@ export default function Photos() {
                                     width={1000}
                                     height={1000}
                                     priority={true}
-                                    className="h-full w-full object-cover rounded-xl"
+                                    className="h-full w-full object-cover rounded-[10px]"
                                 />
                             </div>
                             <div
@@ -270,7 +270,7 @@ export default function Photos() {
                                     width={1000}
                                     height={1000}
                                     priority={true}
-                                    className="h-full w-full object-cover rounded-xl"
+                                    className="h-full w-full object-cover rounded-[10px]"
                                 />
                             </div>
                         </div>
