@@ -29,7 +29,7 @@ export default function EduWorkCard({
     customFields,
 }: CardProps) {
     return (
-        <Card className="my-4">
+        <Card className="my-4 backdrop-blur-sm">
             <CardHeader className="pb-3">
                 <CardTitle className="flex flex-row justify-between items-center">
                     <div className="text-xl">{title}</div>

@@ -43,7 +43,7 @@ export default function ProjectsCard({
     const link_repo = repo_link ? new URL(repo_link) : new URL("");
 
     return (
-        <Card className="flex flex-col">
+        <Card className="flex flex-col backdrop-blur-sm">
             <CardHeader className=" pb-3">
                 <CardTitle>
                     <div className="text-xl flex flex-row justify-between items-center">

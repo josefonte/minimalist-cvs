@@ -142,7 +142,7 @@ function Navbar() {
     }, [activeTabIndex]);
 
     return (
-        <div className="flew-row relative mx-auto flex h-12  px-2 backdrop-blur-sm justify-between border-b ">
+        <div className="flew-row relative mx-auto flex h-12 px-2  justify-between border-b ">
             <span
                 className="absolute bottom-0 -z-10 flex overflow-hidden rounded-md py-2 transition-all duration-300"
                 style={{ left: tabUnderlineLeft, width: tabUnderlineWidth }}
@@ -165,7 +165,7 @@ function Navbar() {
                                 isActive
                                     ? ` font-medium`
                                     : `hover:text-gray-600`
-                            }  flex flex-row justify-between gap-0.5 items-center  my-auto cursor-pointer select-none rounded-md px-4  font-base `}
+                            }  flex flex-row justify-between gap-0.5 items-center  my-auto cursor-pointer select-none rounded-md px-4 font-base `}
                             onClick={() => setActiveTabIndex(index)}
                         >
                             {isActive ? tab.icon_bold : tab.icon_light}

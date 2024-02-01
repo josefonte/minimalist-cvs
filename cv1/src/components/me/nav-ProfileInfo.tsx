@@ -15,7 +15,7 @@ export default function ProfileInfo() {
                 </Avatar>
             </div>
 
-            <div className="flex flex-col gap-2 mt-2">
+            <div className="flex flex-col gap-2 mt-2 ">
                 <div className="text-3xl font-bold border-solid text-center">
                     José Fonte
                 </div>
