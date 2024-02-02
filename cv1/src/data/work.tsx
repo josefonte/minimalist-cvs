@@ -2,12 +2,12 @@ export interface WorkDataType {
     company: string;
     role: string;
     description: string[];
-    badges?: string[];
+    badges?: string[] | undefined;
     date: string;
     location?: string;
 }
 
-const data: WorkDataType[] = [
+const WorkData: WorkDataType[] = [
     {
         company: "Colégio João Paulo II",
         role: "Assistant Teacher of Robotics",
@@ -28,7 +28,7 @@ const data: WorkDataType[] = [
     },
     {
         company: "Sngular Portugal",
-        role: "Full-Stack Software Enginner | Summer Intern ",
+        role: "Full-Stack Software Engineer | Summer Intern ",
         description: [
             "Collaborated in a team of four summer interns to develop a JIRA App integrated in the Atlassian Ecosystem.",
             " The goal of the app was to manage tasks and subtasks inside JIRA tickets, with a backbone for admins to manage everything.",
@@ -49,7 +49,7 @@ const data: WorkDataType[] = [
     },
     {
         company: "CodeVision",
-        role: "Full-Stack Software Enginner | Summer Intern ",
+        role: "Full-Stack Software Engineer | Summer Intern ",
         description: [
             "Collaborated with a team to develop an internal tool that would connect international partners with the company.",
             "Worked with Entity ORM to manage multiple databases.",
@@ -69,4 +69,39 @@ const data: WorkDataType[] = [
     },
 ];
 
-export { data };
+const VolWorkData: WorkDataType[] = [
+    {
+        company: "CESIUM",
+        role: "Member of Department Recreative",
+        description: [
+            "Help organize events for the student community around the department.",
+            "Integrated the Staff of SEI 24.",
+        ],
+        badges: [],
+        date: "Sept 2023 - Present ",
+        location: "Braga, Portugal",
+    },
+    {
+        company: "CoderDojo Braga",
+        role: "Mentor",
+        description: [
+            "Teach kids how to code in a fun and engaging way.",
+            "Teach classes on Scratch and Python.",
+        ],
+
+        date: "Sept 2023 - Present ",
+        location: "Braga, Portugal",
+    },
+    {
+        company: "IEEE Student Branch UMinho",
+        role: "Member of Program Comitee",
+        description: [
+            "Help organize workshopts, talks and other events for the academic community.",
+            'Taught a workshop on "Version Control - Git & Github".',
+        ],
+        date: "Sept 2023 - Present ",
+        location: "Braga, Portugal",
+    },
+];
+
+export { WorkData, VolWorkData };
