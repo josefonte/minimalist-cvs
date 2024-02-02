@@ -29,7 +29,7 @@ export default function EduWorkCard({
     customFields,
 }: CardProps) {
     return (
-        <Card className="my-4 backdrop-blur-sm">
+        <Card className="my-4 backdrop-blur-sm ">
             <CardHeader className="pb-3">
                 <CardTitle className="flex flex-row justify-between items-center">
                     <div className="text-xl">{title}</div>
@@ -44,7 +44,7 @@ export default function EduWorkCard({
                     </div>
                 </CardDescription>
             </CardHeader>
-            <CardContent className=" font-light text-sm	pb-5">
+            <CardContent className=" font-light text-sm	pb-5 leading-relaxed">
                 <ul className=" list-disc ">
                     {description.map((point, index) => (
                         <li key={index} className="ml-3.5 mb-1.5">
@@ -54,13 +54,15 @@ export default function EduWorkCard({
                 </ul>
                 {customFields}
             </CardContent>
-            <CardFooter className="flex flex-row flex-wrap pb-4">
-                {badges?.map((badge, index) => (
-                    <Badge key={index} className="mr-2 mb-2">
-                        {badge}
-                    </Badge>
-                ))}
-            </CardFooter>
+            {(badges?.length ?? 0) > 0 && (
+                <CardFooter className={`flex flex-row flex-wrap pb-4`}>
+                    {badges?.map((badge, index) => (
+                        <Badge key={index} className="mr-2 mb-2">
+                            {badge}
+                        </Badge>
+                    ))}
+                </CardFooter>
+            )}
         </Card>
     );
 }

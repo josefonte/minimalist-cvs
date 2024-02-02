@@ -142,7 +142,7 @@ function Navbar() {
     }, [activeTabIndex]);
 
     return (
-        <div className=" flew-row  mx-auto flex h-12 px-2  justify-between border-b ">
+        <div className=" relative flew-row  mx-auto flex h-12 px-2  justify-between border-b ">
             <span
                 className="absolute bottom-0 -z-10 flex overflow-hidden rounded-md py-2 transition-all duration-300"
                 style={{ left: tabUnderlineLeft, width: tabUnderlineWidth }}
