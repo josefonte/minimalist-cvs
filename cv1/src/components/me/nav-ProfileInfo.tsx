@@ -1,5 +1,6 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-
+import Image from "next/image";
+import Link from "next/link";
 import { SewingPinFilledIcon } from "@radix-ui/react-icons";
 
 export default function ProfileInfo() {
@@ -24,19 +25,21 @@ export default function ProfileInfo() {
                     <div className="flex flex-row gap-2 items-center">
                         <div className="flex flex-row gap-1 items-center">
                             <div className=" italic ">@</div>
-                            <a
+                            <Link
                                 className="italic hover:underline horver:cursor-pointer "
                                 href="https://www.uminho.pt/PT"
                                 target="_blank"
                             >
                                 Universidade do Minho
-                            </a>
+                            </Link>
                         </div>
-                        <img
+                        <Image
                             src="/assets/uminho.png"
                             className="inline-block h-4 w-4 rounded"
+                            width={50}
+                            height={50}
                             alt="Universidade do Minho Logo"
-                        />{" "}
+                        />
                     </div>
                 </div>
                 <div className="flex flex-row justify-center  gap-1 items-center text-center">

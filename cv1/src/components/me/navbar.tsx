@@ -108,20 +108,15 @@ const allTabs = [
     },
 ];
 
-function getTabIndex() {
-    const starting_tab = usePathname().slice(1);
-    let tab_index = 0;
-
-    allTabs.map((tab, index) =>
-        tab.id === starting_tab ? (tab_index = index) : 0
-    );
-    return tab_index;
+function useInitialTabIndex() {
+    const startingTab = usePathname().slice(1);
+    return allTabs.findIndex((tab) => tab.id === startingTab);
 }
 
-function Navbar() {
+export default function Navbar() {
     const tabsRef = useRef<(HTMLElement | null)[]>([]);
     const [activeTabIndex, setActiveTabIndex] = useState<number | null>(
-        getTabIndex()
+        useInitialTabIndex()
     );
 
     const [tabUnderlineWidth, setTabUnderlineWidth] = useState(0);
@@ -177,5 +172,3 @@ function Navbar() {
         </div>
     );
 }
-
-export default Navbar;
