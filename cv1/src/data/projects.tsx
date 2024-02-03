@@ -16,7 +16,7 @@ export interface ProjectsCardType {
 
 const data: ProjectsCardType[] = [
     {
-        title: "University ",
+        title: "University Projects",
         description:
             "All the projects I've done during my BSc and MSc in Software Enginnering at the Universidade do Minho.",
         active: false,

@@ -38,6 +38,8 @@ import {
 
 import { Textarea } from "@/components/ui/textarea";
 
+import Link from "next/link";
+
 export default function ButtonsNav() {
     const { theme, setTheme } = useTheme();
     const [isOpen, setIsOpen] = React.useState(false);
@@ -62,47 +64,36 @@ export default function ButtonsNav() {
                 </DropdownMenuTrigger>
                 <DropdownMenuContent>
                     <DropdownMenuGroup>
-                        <DropdownMenuItem className="group flex flex-row justify-between hover:cursor-pointer">
-                            <div className="flex flex-row gap-3 items-center ">
-                                <InstagramLogoIcon />
-                                <a>Instagram</a>
-                            </div>
-                            <div className=" transition duration-300 group-hover:rotate-45 group-hover:cursor-pointer">
-                                <ArrowTopRightIcon />
-                            </div>
+                        {/*<DropdownMenuItem className="hover:cursor-pointer">
+                            <Link
+                                href="https://www.instagram.com/"
+                                target="_blank"
+                                className="group w-full flex flex-row justify-between items-center"
+                            >
+                                <div className="flex flex-row gap-3 items-center ">
+                                    <InstagramLogoIcon />
+                                    <a>Instagram</a>
+                                </div>
+                                <div className=" transition duration-300 group-hover:rotate-45 group-hover:cursor-pointer">
+                                    <ArrowTopRightIcon />
+                                </div>
+                            </Link>
+                        </DropdownMenuItem> 
+                         <DropdownMenuItem className="hover:cursor-pointer">
+                            <Link
+                                href="https://www.youtube.com/"
+                                target="_blank"
+                                className="group w-full flex flex-row justify-between items-center"
+                            >
+                                <div className="flex flex-row gap-3 items-center ">
+                                    <VideoIcon /> Youtube
+                                </div>
+                                <div className=" transition duration-300 group-hover:rotate-45 group-hover:cursor-pointer">
+                                    <ArrowTopRightIcon />
+                                </div>
+                            </Link>
                         </DropdownMenuItem>
-                        <DropdownMenuItem className="group flex flex-row gap-2 min-w-40 justify-between hover:cursor-pointer">
-                            <div className="flex flex-row gap-3 items-center ">
-                                <VideoIcon /> Youtube
-                            </div>
-                            <div className=" transition duration-300 group-hover:rotate-45 group-hover:cursor-pointer">
-                                <ArrowTopRightIcon />
-                            </div>
-                        </DropdownMenuItem>
-                        <DropdownMenuItem className="group flex flex-row gap-2  justify-between hover:cursor-pointer">
-                            <div className="flex flex-row gap-3 items-center ">
-                                <LinkedInLogoIcon /> LinkedIn
-                            </div>
-                            <div className=" transition duration-300 group-hover:rotate-45 group-hover:cursor-pointer">
-                                <ArrowTopRightIcon />
-                            </div>
-                        </DropdownMenuItem>
-                        <DropdownMenuItem className="group flex flex-row gap-2  justify-between hover:cursor-pointer">
-                            <div className="flex flex-row gap-3 items-center ">
-                                <TwitterLogoIcon /> Twitter
-                            </div>
-                            <div className=" transition duration-300 group-hover:rotate-45 group-hover:cursor-pointer">
-                                <ArrowTopRightIcon />
-                            </div>
-                        </DropdownMenuItem>
-                        <DropdownMenuItem className="group flex flex-row gap-2  justify-between hover:cursor-pointer">
-                            <div className="flex flex-row gap-3 items-center ">
-                                <GitHubLogoIcon /> Github
-                            </div>
-                            <div className=" transition duration-300 group-hover:rotate-45 group-hover:cursor-pointer">
-                                <ArrowTopRightIcon />
-                            </div>
-                        </DropdownMenuItem>
+
                         <DropdownMenuItem className="group flex flex-row gap-2 min-w-40 justify-between hover:cursor-pointer">
                             <div className="flex flex-row gap-3 items-center ">
                                 <Gitlab className="w-4" /> GitLab
@@ -111,13 +102,66 @@ export default function ButtonsNav() {
                                 <ArrowTopRightIcon />
                             </div>
                         </DropdownMenuItem>
-                        <DropdownMenuItem className="group flex flex-row gap-2 min-w-40 justify-between hover:cursor-pointer">
-                            <div className="flex flex-row gap-3 items-center ">
-                                <AtSignIcon className="w-4" /> Medium
-                            </div>
-                            <div className=" transition duration-300 group-hover:rotate-45 group-hover:cursor-pointer">
-                                <ArrowTopRightIcon />
-                            </div>
+                        */}
+
+                        <DropdownMenuItem className="hover:cursor-pointer">
+                            <Link
+                                href="https://www.linkedin.com/in/jose-pedro-fonte/"
+                                target="_blank"
+                                className="group w-full flex flex-row justify-between items-center"
+                            >
+                                <div className="flex flex-row gap-3 items-center ">
+                                    <LinkedInLogoIcon /> LinkedIn
+                                </div>
+                                <div className=" transition duration-300 group-hover:rotate-45 group-hover:cursor-pointer">
+                                    <ArrowTopRightIcon />
+                                </div>
+                            </Link>
+                        </DropdownMenuItem>
+
+                        <DropdownMenuItem className=" hover:cursor-pointer">
+                            <Link
+                                href="https://twitter.com/zepfonte"
+                                target="_blank"
+                                className="group w-full flex flex-row justify-between items-center"
+                            >
+                                <div className="flex flex-row gap-3 items-center ">
+                                    <TwitterLogoIcon /> Twitter
+                                </div>
+                                <div className=" transition duration-300 group-hover:rotate-45 group-hover:cursor-pointer">
+                                    <ArrowTopRightIcon />
+                                </div>
+                            </Link>
+                        </DropdownMenuItem>
+
+                        <DropdownMenuItem className=" hover:cursor-pointer">
+                            <Link
+                                href=" https://github.com/josefonte"
+                                target="_blank"
+                                className="group w-full flex flex-row justify-between items-center"
+                            >
+                                <div className="flex flex-row gap-3 items-center ">
+                                    <GitHubLogoIcon /> Github
+                                </div>
+                                <div className=" transition duration-300 group-hover:rotate-45 group-hover:cursor-pointer">
+                                    <ArrowTopRightIcon />
+                                </div>
+                            </Link>
+                        </DropdownMenuItem>
+
+                        <DropdownMenuItem className=" hover:cursor-pointer">
+                            <Link
+                                href=" https://medium.com/@josefonte"
+                                target="_blank"
+                                className="group w-full flex flex-row justify-between items-center"
+                            >
+                                <div className="flex flex-row gap-3 items-center ">
+                                    <AtSignIcon className="w-4" /> Medium
+                                </div>
+                                <div className=" transition duration-300 group-hover:rotate-45 group-hover:cursor-pointer">
+                                    <ArrowTopRightIcon />
+                                </div>
+                            </Link>
                         </DropdownMenuItem>
                     </DropdownMenuGroup>
                     <DropdownMenuSeparator />
