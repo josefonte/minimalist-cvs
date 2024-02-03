@@ -145,7 +145,8 @@ export default function ButtonsNav() {
                             Send Email
                         </DialogTitle>
                         <DialogDescription>
-                            Write me a message and I'll get back to you asap
+                            Write me a message and I&apos;ll get back to you
+                            asap
                         </DialogDescription>
                     </DialogHeader>
 
