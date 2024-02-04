@@ -1,6 +1,13 @@
 "use client";
 
+import { set, z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+
 import * as React from "react";
+import Link from "next/link";
+import { useTheme } from "next-themes";
+
 import {
     MoonIcon,
     SunIcon,
@@ -12,7 +19,6 @@ import {
     InstagramLogoIcon,
     EnvelopeClosedIcon,
 } from "@radix-ui/react-icons";
-import { useTheme } from "next-themes";
 import { AtSignIcon, Gitlab, SendHorizontal, X } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -24,9 +30,15 @@ import {
     DialogHeader,
     DialogTitle,
 } from "@/components/ui/dialog";
+import {
+    Form,
+    FormControl,
+    FormField,
+    FormItem,
+    FormLabel,
+    FormMessage,
+} from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -35,26 +47,85 @@ import {
     DropdownMenuTrigger,
     DropdownMenuSeparator,
 } from "@/components/ui/dropdown-menu";
-
 import { Textarea } from "@/components/ui/textarea";
+import { ToastAction } from "@/components/ui/toast";
+import { useToast } from "@/components/ui/use-toast";
 
-import Link from "next/link";
+import { sendEmail } from "@/app/actions/sendEmail";
+
+const formSchema = z.object({
+    name: z
+        .string()
+        .min(2, {
+            message: "Min characters of 2.",
+        })
+        .max(20, {
+            message: "Min characters of 20.",
+        }),
+    email: z.string().email(),
+    subject: z
+        .string()
+        .min(2, {
+            message: "Min characters of 2.",
+        })
+        .max(100, {
+            message: "Max characters of 100.",
+        }),
+    message: z
+        .string()
+        .min(2, {
+            message: "Min characters of 2.",
+        })
+        .max(500, {
+            message: "Max characters of 500.",
+        }),
+});
 
 export default function ButtonsNav() {
     const { theme, setTheme } = useTheme();
     const [isOpen, setIsOpen] = React.useState(false);
+    const { toast } = useToast();
 
-    const onClose = () => {
+    const onCloseDialog = () => {
         setIsOpen(false);
     };
 
-    const onOpen = () => {
+    const onOpenDialog = () => {
         setIsOpen(true);
     };
 
-    const handleClicked = () => {
+    const handleThemeClicked = () => {
         setTheme(theme === "dark" ? "light" : "dark");
     };
+
+    const form = useForm<z.infer<typeof formSchema>>({
+        resolver: zodResolver(formSchema),
+    });
+
+    async function onSubmit(values: z.infer<typeof formSchema>) {
+        setIsOpen(false);
+        const response = await sendEmail(
+            values.name,
+            values.email,
+            values.subject,
+            values.message
+        );
+
+        console.log(response);
+
+        if (response instanceof Error || !response) {
+            toast({
+                variant: "failed",
+                title: "Email Not Sent ❌ Try Later",
+            });
+        }
+
+        if (response && "sent" in response && response.sent) {
+            toast({
+                title: "Email Sent Successfully ✅",
+            });
+        }
+    }
 
     return (
         <div className="flex flex-row gap-3 pr-4 pt-4">
@@ -168,7 +239,7 @@ export default function ButtonsNav() {
                     <DropdownMenuItem className="flex flex-row gap-2 ">
                         <div
                             className="flex flex-row gap-4 items-center hover:cursor-pointer "
-                            onClick={onOpen}
+                            onClick={onOpenDialog}
                         >
                             <EnvelopeClosedIcon /> Email Me
                         </div>
@@ -176,16 +247,20 @@ export default function ButtonsNav() {
                 </DropdownMenuContent>
             </DropdownMenu>
 
-            <Button variant="outline" size="icon" onClick={handleClicked}>
+            <Button variant="outline" size="icon" onClick={handleThemeClicked}>
                 <SunIcon className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
                 <MoonIcon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
                 <span className="sr-only">Toggle theme</span>
             </Button>
 
-            <Dialog onOpenChange={onClose} open={isOpen} defaultOpen={isOpen}>
-                <DialogContent className="md:max-w-[725px] px-10 pt-8 ">
-                    <DialogHeader>
-                        <DialogTitle className="flex flex-row gap-2 items-center text-2xl">
+            <Dialog
+                onOpenChange={onCloseDialog}
+                open={isOpen}
+                defaultOpen={isOpen}
+            >
+                <DialogContent className="mx-4 rounded-lg md:max-w-[725px] px-10 pt-8 ">
+                    <DialogHeader className="flex flex-col gap-1 items-start">
+                        <DialogTitle className="text-2xl">
                             Send Email
                         </DialogTitle>
                         <DialogDescription>
@@ -193,81 +268,104 @@ export default function ButtonsNav() {
                             asap
                         </DialogDescription>
                     </DialogHeader>
-
-                    <div className="grid gap-4 py-4">
-                        <div className="grid grid-cols-12 items-center gap-4 ">
-                            <Label htmlFor="name" className="col-span-2 ">
-                                Nome
-                            </Label>
-                            <Input
-                                id="name"
-                                placeholder="John Cena"
-                                className="col-span-6"
-                            />
-                        </div>
-                        <div className="grid grid-cols-12 items-center gap-4 ">
-                            <Label htmlFor="name" className="col-span-2 ">
-                                Email
-                            </Label>
-                            <Input
-                                id="email"
-                                placeholder="your-email@gmail.com"
-                                className="col-span-6"
-                            />
-                        </div>
-                        <div className="grid grid-cols-12 items-center gap-4 ">
-                            <Label htmlFor="name" className="col-span-2  ">
-                                Subject
-                            </Label>
-                            <Input
-                                id="subject"
-                                placeholder="Subject"
-                                className="col-span-10"
-                            />
-                        </div>
-                        <div className="grid grid-cols-12 min-h-[200px] items-center gap-4">
-                            <Label
-                                htmlFor="username"
-                                className="col-span-2 self-start pt-2"
-                            >
-                                Content
-                            </Label>
-                            <Textarea
-                                placeholder="Type your message here..."
-                                className="col-span-10 min-h-[200px]"
-                            />
-                        </div>
-                    </div>
-                    <DialogFooter>
-                        <Button
-                            type="submit"
-                            variant="outline"
-                            className="group relative inline-flex h-10 items-center justify-center overflow-hidden rounded-md  hover:cursor-pointer px-6 font-medium  duration-500"
-                            onClick={onClose}
+                    <Form {...form}>
+                        <form
+                            onSubmit={form.handleSubmit(onSubmit)}
+                            className="space-y-1"
                         >
-                            <span className="translate-x-0 opacity-100 transition group-hover:-translate-x-[150%] group-hover:opacity-0">
-                                Cancel
-                            </span>
-
-                            <X
-                                className="absolute translate-x-[150%] opacity-0 transition group-hover:translate-x-0 group-hover:opacity-100"
-                                strokeWidth={1.75}
+                            <FormField
+                                defaultValue=""
+                                control={form.control}
+                                name="name"
+                                render={({ field }) => (
+                                    <FormItem className="grid grid-cols-12 items-center  ">
+                                        <FormLabel className="col-span-2">
+                                            Name
+                                        </FormLabel>
+                                        <FormControl>
+                                            <Input
+                                                placeholder="Alan Turing"
+                                                {...field}
+                                                className="col-span-10 sm:col-span-6"
+                                            />
+                                        </FormControl>
+                                    </FormItem>
+                                )}
                             />
-                        </Button>
-
-                        <Button
-                            type="submit"
-                            className="group relative inline-flex h-10 items-center justify-center overflow-hidden rounded-md  hover:cursor-pointer px-6 font-medium  duration-500 hover:bg-primary"
-                        >
-                            <span className="translate-x-0 opacity-100 transition group-hover:-translate-x-[150%] group-hover:opacity-0">
-                                Send Email
-                            </span>
-                            <SendHorizontal
-                                className="absolute translate-x-[150%] opacity-0 transition group-hover:translate-x-0 group-hover:opacity-100"
-                                strokeWidth={1.75}
+                            <FormField
+                                defaultValue=""
+                                control={form.control}
+                                name="email"
+                                render={({ field }) => (
+                                    <FormItem className="grid grid-cols-12 items-center ">
+                                        <FormLabel className="col-span-2">
+                                            Email
+                                        </FormLabel>
+                                        <FormControl>
+                                            <Input
+                                                placeholder="alanturing@gmail.com"
+                                                {...field}
+                                                className="col-span-10 sm:col-span-6"
+                                            />
+                                        </FormControl>
+                                    </FormItem>
+                                )}
                             />
-                        </Button>
-                    </DialogFooter>
+                            <FormField
+                                defaultValue=""
+                                control={form.control}
+                                name="subject"
+                                render={({ field }) => (
+                                    <FormItem className="grid grid-cols-12 items-center">
+                                        <FormLabel className="col-span-2">
+                                            Subject
+                                        </FormLabel>
+                                        <FormControl>
+                                            <Input
+                                                placeholder="Subject"
+                                                {...field}
+                                                className="col-span-10"
+                                            />
+                                        </FormControl>
+                                    </FormItem>
+                                )}
+                            />
+                            <FormField
+                                defaultValue=""
+                                control={form.control}
+                                name="message"
+                                render={({ field }) => (
+                                    <FormItem className="grid grid-cols-12 items-center ">
+                                        <FormLabel className="col-span-2 self-start pt-2">
+                                            Message
+                                        </FormLabel>
+                                        <FormControl>
+                                            <Textarea
+                                                placeholder="Type your message here..."
+                                                {...field}
+                                                className="col-span-10 min-h-[200px] "
+                                            />
+                                        </FormControl>
+                                    </FormItem>
+                                )}
+                            />
+
+                            <DialogFooter>
+                                <Button
+                                    type="submit"
+                                    className="group mt-2 relative inline-flex h-10 items-center justify-center overflow-hidden rounded-md  hover:cursor-pointer px-6 font-medium  duration-500 hover:bg-primary"
+                                >
+                                    <span className="translate-x-0 opacity-100 transition group-hover:-translate-x-[150%] group-hover:opacity-0">
+                                        Send Email
+                                    </span>
+                                    <SendHorizontal
+                                        className="absolute translate-x-[150%] opacity-0 transition group-hover:translate-x-0 group-hover:opacity-100"
+                                        strokeWidth={1.75}
+                                    />
+                                </Button>
+                            </DialogFooter>
+                        </form>
+                    </Form>
                 </DialogContent>
             </Dialog>
         </div>

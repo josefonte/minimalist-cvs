@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 
 import { ThemeProvider } from "@/components/theme-provider";
+import { Toaster } from "@/components/ui/toaster";
 
 import ButtonsNav from "@/components/me/buttons-nav";
 import Navbar from "@/components/me/navbar";
@@ -11,8 +12,13 @@ import ProfileInfo from "@/components/me/nav-ProfileInfo";
 import { HeartFilledIcon } from "@radix-ui/react-icons";
 
 export const metadata: Metadata = {
-    title: "josefonte",
-    description: "Create a CV with Next.js and Tailwind CSS",
+    title: { default: "José Fonte", template: "José Fonte | %s" },
+    description: "Student, Developer, Portugal, Braga",
+    icons: {
+        icon: ["/icons/favicon.ico"],
+        apple: ["/icons/apple-touch-icon.png"],
+        shortcut: ["/icons/apple-touch-icon.png"],
+    },
 };
 
 export default function RootLayout({
@@ -58,6 +64,7 @@ export default function RootLayout({
                             José Fonte
                         </a>
                     </div>
+                    <Toaster />
                 </ThemeProvider>
             </body>
         </html>

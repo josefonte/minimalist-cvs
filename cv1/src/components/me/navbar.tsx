@@ -109,7 +109,7 @@ const allTabs = [
 ];
 
 function useInitialTabIndex() {
-    const startingTab = usePathname().slice(1);
+    const startingTab = usePathname().slice(1) || "about";
     return allTabs.findIndex((tab) => tab.id === startingTab);
 }
 
