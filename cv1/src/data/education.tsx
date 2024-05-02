@@ -33,7 +33,7 @@ const data: EducationDataType[] = [
         institution: "Universidade do Minho",
         course: "BSc in Software Engineering",
         description: [
-            "Finished my BSc in Software Engineering with a 14.5/20 and proceeded to a MSc in Software Engineering in order to deepen my knowledge in Distributed Systems, Software Development & Design and AI, ML & Data Science.",
+            "Finished my BSc in Software Engineering and proceeded to a MSc in Software Engineering in order to deepen my knowledge in Distributed Systems, Software Development & Design and AI, ML & Data Science.",
             "The Bachelors degree has a project‑based learning approach, so most of the subjects include a project, which made me develop the ability to design, build and test applications in a dynamic, collaborative and high‑pressure environment.",
         ],
         badges: [
